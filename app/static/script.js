@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let items = []; // Store the loaded items
 
     // Load data from the JSON file (assuming it's on the same domain)
-    fetch("/static/data.jsonl")
+    fetch("/app/static/data.jsonl")
     .then(response => response.text())
     .then(data => {
         const lines = data.split("\n");
