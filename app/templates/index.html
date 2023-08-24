@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Results</title>
+    <style>
+        /* Apply link-like styles */
+        .styled-link {
+            color: blue;
+            text-decoration: underline;
+            cursor: pointer; /* Optional: Show hand cursor on hover */
+        }
+
+        /* Remove default link styles */
+        .styled-link {
+            display: inline-block;
+            border: none;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Showing "chrome chair" search results...</h1>
+    <div>
+        <label for="sort">Sort by Price:</label>
+        <select id="sort">
+            <option value="">Off</option>
+            <option value="asc">Low to High</option>
+            <option value="desc">High to Low</option>
+        </select>
+    </div>
+    <div>
+        <label for="filter">Filter by Source:</label>
+        <select id="filter">
+            <option value="">All Sources</option>
+            <option value="eBay">eBay</option>
+            <option value="Facebook Marketplace">Facebook Marketplace</option>
+            <option value="Remix Market">Remix Market</option>
+        </select>
+    </div>
+    <ul id="item-list">
+        <!-- Item list will be populated dynamically using JavaScript -->
+    </ul>
+
+    <!-- old code from before filtering!
+    <ol>
+    {% for item in items %}
+        <li>
+            <h2>{{ item.title }}</h2>
+            <img src="{{ item.image_url }}" alt="Image">
+            <p>Price: {{ item.price }}</p>
+            <p>Delivery: {{ item.delivery }}</p>
+            <p>Source: {{ item.source }}</p>
+            <p>
+                <a href="{{ item.listing_url }}" target="_blank" class="styled-link">Link</a>
+            </p>
+        </li>
+    {% endfor %}
+    </ol>
+     -->
+
+     <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
