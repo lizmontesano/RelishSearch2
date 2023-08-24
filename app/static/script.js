@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let items = []; // Store the loaded items
 
     // Load data from the JSON file (assuming it's on the same domain)
-    fetch("../static/data.jsonl")
+    fetch("https://relish-search2.vercel.app/app/static")
     .then(response => response.text())
     .then(data => {
         const lines = data.split("\n");
