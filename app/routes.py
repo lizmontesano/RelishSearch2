@@ -12,9 +12,3 @@ def index():
             item = json.loads(line)
             items.append(item)
     return render_template('index.html', items=items)
-
-@app.route('/api')
-def api():
-    with open('/static/data.jsonl', mode='r') as my_file:
-        text = my_file.read()
-        return text
