@@ -12,7 +12,9 @@ def index():
             item = json.loads(line)
             items.append(item)
     return render_template('index.html', items=items)
+
 @app.route('/data')
+def data():
     items = []
     with open('app/static/data.jsonl') as f:
         for line in f:

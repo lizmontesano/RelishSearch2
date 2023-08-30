@@ -5,10 +5,10 @@ import scrapy
 
 class eBaySpider(scrapy.Spider):
     name = 'ebay_spider'
-    start_urls = ['https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2334524.m570.l1312&_nkw=chrome+chair&_sacat=0&LH_TitleDesc=0&_odkw=chrome+chair&_osacat=0']
+    start_urls = ['https://www.ebay.com/sch/i.html?_from=R40&_trksid=p2334524.m570.l1313&_nkw=postmodern+dining+chairs&_sacat=0&LH_TitleDesc=0&_odkw=postmodern+chair&_sop=12']
 
     custom_settings = {
-        'FEEDS': { 'data.jsonl': { 'format': 'jsonlines',}}
+        'FEEDS': { 'postmoderndiningchairs.json': { 'format': 'json',}}
     }
 
     def parse(self, response):

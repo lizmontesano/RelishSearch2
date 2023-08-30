@@ -8,14 +8,14 @@ from scrapy_splash import SplashRequest
 
 class FacebookSpider(scrapy.Spider):
     name = 'facebook_spider'
-    start_urls = ['https://www.facebook.com/marketplace/nyc/search/?query=chrome%20chair&exact=false']
+    start_urls = ['https://www.facebook.com/marketplace/nyc/search?query=postmodern%20dining%20chairs']
 
     def start_requests(self):
         for url in self.start_urls:
             yield SplashRequest(url, self.parse, args={'wait': 2})
     
     custom_settings = {
-        'FEEDS': { 'data.jsonl': { 'format': 'jsonlines',}}
+        'FEEDS': { 'postmoderndiningchairs.json': { 'format': 'json',}}
     }
 
     def parse(self, response):
